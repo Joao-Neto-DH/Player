@@ -1,6 +1,7 @@
 @use 'variables';
 @use 'functions';
 @use 'helpers';
+@import 'buttons';
 
 *{
     padding: 0;
@@ -27,7 +28,23 @@
     border-radius: 4px;
 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
     img{
         width: 100%;
+    }
+}
+
+.controller{
+    background: linear-gradient(transparent, #2A2A2A);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+
+    .controller-internal{
+        padding: 19px 38px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
