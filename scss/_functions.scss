@@ -1,0 +1,4 @@
+@use 'variables';
+@function base_size($scale : 1){
+    @return variables.$size * $scale;
+}
