@@ -106,14 +106,54 @@ body{
         justify-content: left;
         background-color: rgba(200, 200, 200, 0.7);
         position: relative;
-        padding-right: $padding;
         border-radius: 4px;
-
+        height: 48px;
+        // overflow: hidden;
+        
         & > input[type=search]{
-            flex-grow: 1;
+            $focus-color: #EE6E11;
+            width: 100%;
             background-color: transparent;
+            padding-right: $padding * 3.8;
             padding-left: $padding;
-            border: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            transition: 200ms;
+
+            &:focus, &:focus-within, &:focus-visible{
+                border: 1px solid $focus-color;
+                box-shadow: 0 0 4px $focus-color, inset 0 0 4px $focus-color;
+                outline: none;
+                outline-color: $focus-color;
+
+                // & + button{
+                //     border-left: 2px solid $focus-color;
+                // }
+            }
+        }
+
+
+        & > button{
+            height: 100%;
+            position: absolute;
+            padding-right: $padding;
+            padding-left: $padding;
+            font-size: 10px;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            // border-left: 1px solid #808080;
+
+            &::before{
+                content: '';
+                background-color: #808080;
+                width: 1px;
+                height: 70%;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
         }
     }
 }
