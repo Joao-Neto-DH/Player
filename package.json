@@ -1,0 +1,15 @@
+{
+  "name": "player",
+  "version": "1.0.0",
+  "description": "Player de música",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "player",
+    "música"
+  ],
+  "author": "João Neto",
+  "license": "MIT"
+}
