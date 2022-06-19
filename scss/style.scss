@@ -3,6 +3,10 @@
 @use 'helpers';
 @import 'buttons';
 
+$sm: 629px;
+$md: 630px;
+$lg: 912px;
+
 *{
     padding: 0;
     margin: 0;
@@ -19,9 +23,9 @@ body{
     background: radial-gradient(#202B27,#3C5E2B);
 }
 .music-icon{
-    --size: 319px;
+    --size: 90%;
     width: var(--size);
-    height: var(--size);
+    // height: var(--size);
 
     top: 50%;
     left: 50%;
@@ -34,6 +38,13 @@ body{
     overflow: hidden;
     img{
         width: 100%;
+    }
+}
+@media screen and (min-width: $md) {
+    .music-icon{
+        --size: 319px;
+        width: var(--size);
+        height: var(--size);
     }
 }
 
@@ -85,7 +96,7 @@ body{
 
 .playlist{
     background-color: variables.$primary-color;
-    width: 35%;
+    width: 100%;
     height: 100vh;
     position: absolute;
     top: 0;
@@ -155,5 +166,16 @@ body{
                 transform: translateY(-50%);
             }
         }
+    }
+}
+
+@media screen and (min-width: $md) {
+    .playlist{
+        width: 35%;
+    }
+}
+@media screen and (max-width: $sm) {
+    .playlist{
+        width: 70%;
     }
 }
