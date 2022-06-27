@@ -141,6 +141,9 @@
             }
         }
     }
+    .search-popup-result.closed{
+        display: none;
+    }
     
     .music-list{
         flex-grow: 1;
