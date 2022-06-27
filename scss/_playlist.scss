@@ -109,7 +109,7 @@
                 align-items: center;
                 padding: 18px 0;
                 border-bottom: 0.5px solid #7B7B7B7a;
-                cursor: pointer;
+                // cursor: pointer;
 
                 // &:hover{
                 //     background-color: rgba(128, 128, 128, 0.329);
@@ -141,8 +141,8 @@
             }
         }
     }
-    .search-popup-result.closed{
-        display: none;
+    .closed{
+        display: none !important;
     }
     
     .music-list{
