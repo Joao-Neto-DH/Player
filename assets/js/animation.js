@@ -1,7 +1,6 @@
 const cover = document.querySelector('.cover');
 const playlist = document.querySelector('.playlist');
 const btn_list = document.querySelector('[data-list]');
-const controller = document.querySelector('.controller');
 const controllerHideClassName = 'controller-closed';
 let timer = setTimeout(hideController,5*1000);
 
