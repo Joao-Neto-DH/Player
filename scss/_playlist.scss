@@ -1,5 +1,8 @@
 @import 'variables';
 // @import 'playlist';
+%transition{    
+    transition: 0.3s;
+}
 
 .playlist{
     background-color: variables.$primary-color;
@@ -10,6 +13,7 @@
     right: 0;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
     overflow: auto;
+    @extend %transition;
 
     z-index: 1001;
 
@@ -141,8 +145,8 @@
             }
         }
     }
-    .closed{
-        display: none !important;
+    &-closing{
+        transform: translate3d(100%, 0,0);
     }
     
     .music-list{
@@ -204,6 +208,36 @@
             text-align: center;
         }
     }
+}
+.cover{    
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    background-color: rgba(24, 24, 24, 0.5);
+    z-index: 1000;
+    // @extend %transition;
+    // animation-name: closing;
+    // animation-duration: 0.3s;
+    // animation-fill-mode: both;
+    // animation-play-state: paused;
+
+    // &-closing:not(.closed){
+    //     // opacity: 0;
+    //     animation-play-state: running;
+    //     animation-direction: alternate;
+    // }
+    
+    // @keyframes closing {
+    //     from{
+    //         opacity: 1;
+    //     }
+    //     to{
+    //         opacity: 0;
+    //     }
+    // }
 }
 
 @media screen and (min-width: variables.$md) {

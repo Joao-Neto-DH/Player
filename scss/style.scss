@@ -56,16 +56,6 @@ body{
 
 }
 
-.cover{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    
-    background-color: rgba(24, 24, 24, 0.5);
-    z-index: 1000;
-}
 
 @media screen and (max-width: variables.$sm) {
     *{
