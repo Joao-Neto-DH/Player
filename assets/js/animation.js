@@ -1,13 +1,14 @@
 const cover = document.querySelector('.cover');
 const playlist = document.querySelector('.playlist');
 const btn_list = document.querySelector('[data-list]');
-let covered = false;
 
-cover.addEventListener('click', operPlaylist);
-btn_list.addEventListener('click', operPlaylist);
+cover.addEventListener('click', openPlaylist);
+btn_list.addEventListener('click', openPlaylist);
+window.addEventListener('load', () => {
+    cover.style.display = playlist.classList.contains('playlist-closed') ? 'none' : '';
+});
 
-function operPlaylist(event) {
-    playlist.classList.toggle('playlist-closing');
-    cover.style.display = covered ? '' : 'none';
-    covered = !covered;
+function openPlaylist(event) {
+    playlist.classList.toggle('playlist-closed');
+    cover.style.display = playlist.classList.contains('playlist-closed') ? 'none' : '';
 }
