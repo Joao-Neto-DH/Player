@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-sass": "sass scss/style.scss assets/style/index.css",
-    "watch-sass":"sass --watch scss/style.scss assets/style/index.css"
+    "watch-sass": "sass --watch scss/style.scss assets/style/index.css"
   },
   "keywords": [
     "player",
