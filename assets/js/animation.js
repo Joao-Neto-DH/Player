@@ -20,6 +20,7 @@ window.addEventListener('mousemove', (event) => {
 function openPlaylist(event) {
     playlist.classList.toggle('playlist-closed');
     cover.style.display = playlist.classList.contains('playlist-closed') ? 'none' : '';
+    resultList.style.display = 'none';
 }
 
 function hideController() {
