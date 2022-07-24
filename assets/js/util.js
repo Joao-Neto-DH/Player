@@ -1,2 +1,2 @@
-const controller = document.querySelector('.controller');
-const resultList = document.querySelector('.search-popup-result');
+const controller = document.getElementsByClassName('controller')[0];
+const resultList = document.getElementsByClassName('search-popup-result')[0];
