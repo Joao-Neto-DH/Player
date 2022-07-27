@@ -151,10 +151,14 @@
     
     .music-list{
         flex-grow: 1;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
         background-color: #fff;
         border-radius: 4px;
         overflow: auto;
         position: relative;
+        padding-bottom: 8px;
         // height: calc(100% - 48px);
         ul{
             list-style: none;
@@ -200,10 +204,10 @@
         }
 
         .music-list-count{
-            position: absolute;
+            // position: absolute;
             width: 100%;
-            bottom: 8px;
-            left: 0;
+            // bottom: 8px;
+            // left: 0;
             font-size: 12px;
             text-align: center;
         }
