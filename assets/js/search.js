@@ -1,4 +1,5 @@
 const searchForm = document.forms[0];
+const musicList = document.querySelector('.music-list>ul');
 // const resultList = document.getElementsByClassName('search-popup-result')[0];
 
 searchForm.addEventListener('submit', submit);
@@ -17,7 +18,7 @@ function submit(event) {
     let list = document.createElement('ul');
 
     for (let i = 0; i < 5; i++) {
-        let li = musicItem({
+        let li = musicItemResult({
                     img: 'music-image-default.jpg',
                     title: `${i+1}. Coldplay - Viva la vida`
                 })
@@ -34,7 +35,7 @@ function submit(event) {
     resultList.style.display = '';
 }
 
-function musicItem(music){
+function musicItemResult(music){
     let li = document.createElement('li');
     li.classList.add('music-item');
 
@@ -67,6 +68,11 @@ function musicItem(music){
     icon.src = 'assets/imgs/plus-icon.svg';
     icon.alt = 'plus icon';
     btn.appendChild(icon);
+
+    btn.addEventListener('click', ()=>{
+        musicItemList(music);
+    });
+
     li.appendChild(btn);
 
     return li;
@@ -81,4 +87,50 @@ function musicItem(music){
     //                 <img src="assets\\imgs\\plus-icon.svg" alt="plus icon">
     //             </button>
     //         </li>`;
+}
+
+function musicItemList(music) {
+    let li = document.createElement('li');
+    li.classList.add('music-item');
+
+    let span = document.createElement('span');
+
+    let img = document.createElement('img');
+    img.src = `assets/imgs/${music.img}`;
+    img.classList.add('music-img');
+    img.alt = `Imagem de ${music.title}`;
+
+    span.appendChild(img);
+    li.appendChild(span);
+
+    let p = document.createElement('p');
+    p.classList.add('music-title');
+    p.innerText = music.title;
+    li.appendChild(p);
+
+    p = p.cloneNode();
+    p.classList.replace('music-title','music-time');
+    p.innerText = music.duration;
+    li.appendChild(p);
+
+    let btn = document.createElement('button');
+    btn.type = 'button';
+    btn.innerText = 'More';
+    li.appendChild(btn);
+
+    musicList.appendChild(li);
+    // <li class="music-item">
+    //                         <span>
+    //                             <img src="assets\imgs\music-image-default.jpg" class="music-img" alt="icon da música">
+    //                         </span>
+    //                         <p class="music-title">Ed Sheeran - Perfect</p>
+    //                         <p class="music-time">03:25</p>
+    //                         <button type="button">
+    //                             More
+    //                         </button>
+    //                     </li>
+}
+
+function addMusicToPlaylist(event) {
+    
 }
