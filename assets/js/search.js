@@ -130,7 +130,3 @@ function musicItemList(music) {
     //                         </button>
     //                     </li>
 }
-
-function addMusicToPlaylist(event) {
-    
-}
