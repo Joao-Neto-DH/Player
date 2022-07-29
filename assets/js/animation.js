@@ -16,13 +16,15 @@ window.addEventListener('mousemove', (event) => {
     clearTimeout(timer);
     timer = setTimeout(hideController,5*1000);
 });
-
+/**
+ * Gerencia o evento de abertura da playlist
+ */
 function openPlaylist(event) {
     playlist.classList.toggle('playlist-closed');
     cover.style.display = playlist.classList.contains('playlist-closed') ? 'none' : '';
     resultList.style.display = 'none';
 }
-
+/**Gerencia a ocultação dos controles*/
 function hideController() {
     controller.classList.add(controllerHideClassName);
 }

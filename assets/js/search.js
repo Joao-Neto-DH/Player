@@ -4,6 +4,10 @@ const musicList = document.querySelector('.music-list>ul');
 
 searchForm.addEventListener('submit', submit);
 
+/**
+ * Gerencia o evento de onsubmit do formulário de pesquisa
+ * @param event
+ */
 function submit(event) {
     // alert(searchForm.elements.search.value)
     if(searchForm.elements.search.value.trim() === ''){
@@ -38,7 +42,11 @@ function submit(event) {
     resultList.appendChild(list);
     resultList.style.display = '';
 }
-
+/**
+ * Resultado da música pesquisada
+ * @param music resultado da música pesquisada
+ * @returns HTMLLIElement
+ */
 function musicItemResult(music){
     let li = document.createElement('li');
     li.classList.add('music-item');
@@ -93,6 +101,10 @@ function musicItemResult(music){
     //         </li>`;
 }
 
+/**
+ * Adiciona música a lista de reprodução
+ * @param music música a ser adicionada a lista de reprodução
+ */
 function musicItemList(music) {
     let li = document.createElement('li');
     li.classList.add('music-item');
