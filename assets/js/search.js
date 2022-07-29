@@ -1,5 +1,6 @@
 const searchForm = document.forms[0];
 const musicList = document.querySelector('.music-list>ul');
+const countMusic = document.getElementsByClassName('music-list-count')[0];
 // const resultList = document.getElementsByClassName('search-popup-result')[0];
 
 searchForm.addEventListener('submit', submit);
@@ -135,6 +136,7 @@ function musicItemList(music) {
     li.appendChild(btn);
 
     musicList.appendChild(li);
+    countMusic.innerText = `Total: ${musicList.children.length}`;
     // <li class="music-item">
     //                         <span>
     //                             <img src="assets\imgs\music-image-default.jpg" class="music-img" alt="icon da música">
