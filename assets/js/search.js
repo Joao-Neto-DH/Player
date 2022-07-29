@@ -17,12 +17,16 @@ function submit(event) {
     resultList.getElementsByTagName('ul')[0].remove();
     let list = document.createElement('ul');
 
-    for (let i = 0; i < 5; i++) {
-        let li = musicItemResult({
-                    img: 'music-image-default.jpg',
-                    title: `${i+1}. Coldplay - Viva la vida`
-                })
-        list.appendChild(li);
+    for (const music of musics.data) {
+
+        if (music.title.includes(searchForm.elements.search.value)) {            
+            let li = musicItemResult(music)
+            // {
+            //     img: 'music-image-default.jpg',
+            //     title: `${i+1}. Coldplay - Viva la vida`
+            // }
+            list.appendChild(li);
+        }
         // items += musicItem({
         //     img: "music-image-default.jpg",
         //     title: "Coldplay - Viva la vida"
