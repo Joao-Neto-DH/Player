@@ -26,7 +26,7 @@
                     </button>
                     <!-- Popup de resultados da música pesquisada -->
                     <div class="search-popup-result">
-                        <ul>
+                        <!-- <ul>
                             <li class="music-item">
                                 <span>
                                     <img src="assets\imgs\music-image-default.jpg" class="music-img" alt="icon da música">
@@ -37,7 +37,7 @@
                                     <img src="assets\imgs\plus-icon.svg" alt="plus icon">
                                 </button>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </form>
 
@@ -65,17 +65,17 @@
             <div class="controller-internal">
                 <!-- Botões de controles -->
                 <div class="player-controller">
-                    <button type="button">
+                    <button type="button" data-control="previous">
                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="18" viewBox="0 0 21 18">
                             <path fill="rgb(223,223,223)" fill-rule="evenodd" d="M0 18V0h4.55876446v7.347826H6.3251214L21 0v18L6.3251214 10.652174H4.55876446V18H0z"/>
                         </svg>
                     </button>
-                    <button type="button">
+                    <button type="button" data-control="play">
                         <svg xmlns="http://www.w3.org/2000/svg" width="9" height="21" viewBox="0 0 9 21">
                             <path fill="rgb(223,223,223)" fill-rule="evenodd" d="M0 21.00001907V0h3.00000763v21.00001907H0zm6.00002289 0V0h3.00000763v21.00001907H6.00002289z"/>
                         </svg>                          
                     </button>
-                    <button type="button">
+                    <button type="button" data-control="next">
                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="18" viewBox="0 0 21 18">
                             <path fill="rgb(223,223,223)" fill-rule="evenodd" d="M21 18V0h-4.55876446v7.347826H14.6748786L0 0v18l14.6748786-7.347826h1.76635694V18H21z"/>
                         </svg>                                                  
@@ -105,9 +105,9 @@
     <div class="cover"></div>
     <!-- <script src="assets/js/sample.js"></script> -->
     <script src="assets/js/util.js" type="text/javascript"></script>
-    <script src="assets/js/animation.js" type="text/javascript"></script>
     <script src="assets/js/data.js" type="text/javascript"></script>
     <script src="assets/js/music_controller.js"></script>
     <script src="assets/js/search.js" type="text/javascript"></script>
+    <script src="assets/js/animation.js" type="text/javascript"></script>
 </body>
 </html>

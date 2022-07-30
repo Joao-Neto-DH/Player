@@ -19,7 +19,9 @@ function submit(event) {
     // alert(String.fromCharCode(10))
 
     // let items = '';
-    resultList.getElementsByTagName('ul')[0].remove();
+    try {
+        resultList.getElementsByTagName('ul')[0].remove();
+    } catch (error) {}
     let list = document.createElement('ul');
 
     for (const music of musics.data) {

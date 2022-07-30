@@ -22,6 +22,11 @@ window.addEventListener('mousemove', (event) => {
 function openPlaylist(event) {
     playlist.classList.toggle('playlist-closed');
     cover.style.display = playlist.classList.contains('playlist-closed') ? 'none' : '';
+    searchForm.elements.search.value = '';
+    
+    if(resultList.firstChild){
+        resultList.firstChild.remove();
+    }
     resultList.style.display = 'none';
 }
 /**Gerencia a ocultação dos controles*/
