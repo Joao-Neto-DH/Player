@@ -74,6 +74,7 @@ function musicItemResult(music){
     icon.alt = 'play icon';
     icon.className = '';
     btn.appendChild(icon);
+    btn.addEventListener('click', (event)=>player(music.url))
     li.appendChild(btn);
 
     btn = btn.cloneNode();
