@@ -50,7 +50,7 @@ function submit(event) {
  * @param music resultado da música pesquisada
  * @returns HTMLLIElement
  */
-function musicItemResult(music){
+function musicResult(music){
     let li = document.createElement('li');
     li.classList.add('music-item');
     li.dataset.musicDuration = music.duration;
