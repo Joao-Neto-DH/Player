@@ -4,10 +4,12 @@ const timerInput = document.getElementById("timer");
 audio.addEventListener('timeupdate', updateTime);
 /**
  * Reproduz a música selecionanda
- * @param {string} musicPath 
+ * @param {MouseEvent} event 
  */
-function player(musicPath) {
+function player(event) {
     release();  
+    let li = event.target.closest('li');
+    let musicPath = li.dataset.musicUrl;
     audio.src = musicPath;// 'assets/js/music.mp3';
     // audio.onplaying = ()=> updateTime()
 

@@ -53,22 +53,24 @@ function submit(event) {
 function musicItemResult(music){
     let li = document.createElement('li');
     li.classList.add('music-item');
-
+    
     let span = document.createElement('span');
-
+    
     let img = document.createElement('img');
     img.src = `assets/imgs/${music.img}`;
     img.classList.add('music-img');
     img.alt = `Imagem de ${music.title}`;
-
+    li.dataset.musicImg = music.img; 
+    
     span.appendChild(img);
     li.appendChild(span);
-
+    
     let p = document.createElement('p');
     p.classList.add('music-title');
     p.innerText = music.title;
     li.appendChild(p);
-
+    li.dataset.musicTitle = music.title; 
+    
     let btn = document.createElement('button');
     btn.type = 'button';
     let icon = img.cloneNode();
@@ -76,7 +78,8 @@ function musicItemResult(music){
     icon.alt = 'play icon';
     icon.className = '';
     btn.appendChild(icon);
-    btn.addEventListener('click', (event)=>player(music.url))
+    btn.addEventListener('click', player);
+    li.dataset.musicUrl = music.url; 
     li.appendChild(btn);
 
     btn = btn.cloneNode();
