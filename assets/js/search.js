@@ -7,7 +7,7 @@ searchForm.addEventListener('submit', submit);
 
 /**
  * Gerencia o evento de onsubmit do formulário de pesquisa
- * @param event
+ * @param {SubmitEvent} event
  */
 function submit(event) {
     // alert(searchForm.elements.search.value)
