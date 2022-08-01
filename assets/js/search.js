@@ -40,7 +40,7 @@ function submit(event) {
         // });
     }
     if(!list.hasChildNodes()){
-        list.innerHTML = '<li style="text-align: center">Nenhum resultado encontrado 😥</p>';
+        list.innerHTML = '<li><p style="text-align: center; margin-right: auto;">Nenhum resultado encontrado 😥</p></li>';
     }
     resultList.appendChild(list);
     resultList.style.display = '';
