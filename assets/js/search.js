@@ -53,6 +53,7 @@ function submit(event) {
 function musicItemResult(music){
     let li = document.createElement('li');
     li.classList.add('music-item');
+    li.dataset.musicDuration = music.duration;
     
     let span = document.createElement('span');
     
@@ -88,9 +89,7 @@ function musicItemResult(music){
     icon.alt = 'plus icon';
     btn.appendChild(icon);
 
-    btn.addEventListener('click', ()=>{
-        musicItemList(music);
-    });
+    btn.addEventListener('click', musicItemList);
 
     li.appendChild(btn);
 
@@ -110,30 +109,33 @@ function musicItemResult(music){
 
 /**
  * Adiciona música a lista de reprodução
- * @param music música a ser adicionada a lista de reprodução
+ * @param {MouseEvent} event
  */
-function musicItemList(music) {
+function musicItemList(event) {
+    let target = event.target.closest('li');
     let li = document.createElement('li');
     li.classList.add('music-item');
-
+    
     let span = document.createElement('span');
-
+    
     let img = document.createElement('img');
-    img.src = `assets/imgs/${music.img}`;
+    img.src = `assets/imgs/${target.dataset.musicImg}`;
     img.classList.add('music-img');
-    img.alt = `Imagem de ${music.title}`;
-
+    img.alt = `Imagem de ${target.dataset.musicTitle}`;
+    li.dataset.musicImg = target.dataset.musicImg;
+    
     span.appendChild(img);
     li.appendChild(span);
-
+    
     let p = document.createElement('p');
     p.classList.add('music-title');
-    p.innerText = music.title;
+    li.dataset.musicTitle = p.innerText = target.dataset.musicTitle;
     li.appendChild(p);
-
+    
     p = p.cloneNode();
     p.classList.replace('music-title','music-time');
-    p.innerText = music.duration;
+    li.dataset.musicDuration = p.innerText = target.dataset.musicDuration;
+    // li.dataset.musicDuration = target.dataset.musicDuration;
     li.appendChild(p);
 
     let btn = document.createElement('button');
