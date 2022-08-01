@@ -89,7 +89,7 @@ function musicItemResult(music){
     icon.alt = 'plus icon';
     btn.appendChild(icon);
 
-    btn.addEventListener('click', musicItemList);
+    btn.addEventListener('click', addMusic);
 
     li.appendChild(btn);
 
@@ -111,7 +111,7 @@ function musicItemResult(music){
  * Adiciona música a lista de reprodução
  * @param {MouseEvent} event
  */
-function musicItemList(event) {
+function addMusic(event) {
     let target = event.target.closest('li');
     let li = document.createElement('li');
     li.classList.add('music-item');
