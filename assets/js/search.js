@@ -27,7 +27,7 @@ function submit(event) {
     for (const music of musics.data) {
 
         if (music.title.includes(searchForm.elements.search.value)) {            
-            let li = musicItemResult(music)
+            let li = musicResult(music)
             // {
             //     img: 'music-image-default.jpg',
             //     title: `${i+1}. Coldplay - Viva la vida`
