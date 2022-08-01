@@ -39,9 +39,9 @@ function hideController() {
  * @param {HTMLButtonElement} playButton 
  * @param {bool} playing 
  */
-function playIconUpdate(playing) {
+function playIconUpdate(playing, playButton = btnPlay) {
     // console.log(btnPlay);
-    btnPlay.innerHTML = playing ? 
+    playButton.innerHTML = playing ? 
         `<svg xmlns="http://www.w3.org/2000/svg" width="9" height="21" viewBox="0 0 9 21">
             <path fill="rgb(223,223,223)" fill-rule="evenodd" d="M0 21.00001907V0h3.00000763v21.00001907H0zm6.00002289 0V0h3.00000763v21.00001907H6.00002289z"/>
         </svg>`

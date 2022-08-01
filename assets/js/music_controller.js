@@ -15,7 +15,11 @@ timerInput.addEventListener('mouseup', ()=>{
 });
 audio.addEventListener('playing', ()=>{
     playIconUpdate(true);
-})
+});
+audio.addEventListener('pause', ()=>{
+    playIconUpdate(false);
+});
+
 controllers.forEach((controller)=>{
     controller.addEventListener('click', control);
 });
@@ -91,8 +95,18 @@ function control(event) {
             break;
     }
 }
-
+/**
+ * 
+ * @param {HTMLButtonElement} playButton 
+ */
 function playMusic(playButton) {
-    // console.log(audio);
-    // playIconUpdate(true)
+    if (audio.paused) {
+        playButton.disabled = true;
+        audio.play().finally(()=>{
+            playButton.disabled = false
+        });
+    } else {
+        audio.pause();
+    }
+
 }
