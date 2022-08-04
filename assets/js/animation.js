@@ -2,7 +2,7 @@ const cover = document.getElementsByClassName('cover')[0];
 const playlist = document.getElementsByClassName('playlist')[0];
 const btn_list = document.querySelector('[data-list]');
 const controllerHideClassName = 'controller-closed';
-const btnPlay = document.querySelector('[data-control=play]');
+const [,btnPlay,] = controllers;
 let timer = setTimeout(hideController,5*1000);
 
 cover.addEventListener('click', openPlaylist);

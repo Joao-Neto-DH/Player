@@ -4,7 +4,15 @@ const controllers = document.querySelectorAll('[data-control]');
 let changing = false;
 let playing = false;
 
+window.addEventListener('keypress', keyPressed);
+
 audio.addEventListener('timeupdate', updateTime);
+audio.addEventListener('playing', ()=>{
+    playIconUpdate(true);
+});
+audio.addEventListener('pause', ()=>{
+    playIconUpdate(false);
+});
 
 timerInput.addEventListener('change', change);
 timerInput.addEventListener('mousedown', ()=>{
@@ -12,12 +20,6 @@ timerInput.addEventListener('mousedown', ()=>{
 });
 timerInput.addEventListener('mouseup', ()=>{
     changing = false;
-});
-audio.addEventListener('playing', ()=>{
-    playIconUpdate(true);
-});
-audio.addEventListener('pause', ()=>{
-    playIconUpdate(false);
 });
 
 controllers.forEach((controller)=>{
@@ -109,4 +111,13 @@ function playMusic(playButton) {
         audio.pause();
     }
 
+}
+/**
+ * 
+ * @param {KeyboardEvent} event 
+ */
+function keyPressed(event) {
+    switch (event.code) {
+        case 'Space': playMusic({}); break;
+    }
 }
