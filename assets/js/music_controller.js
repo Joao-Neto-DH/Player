@@ -124,12 +124,20 @@ function keyPressed(event) {
 function activeSong() {
     let active = musicList.querySelector('.active');
 
-    if(!musicList.childElementCount) return;
+    if(!musicList.childElementCount) {
+        console.log(musicList.childElementCount);
+        return;
+    };
 
     if (active) {
-        active.nextSibling() && active.nextSibling().classList().add('active');
+        let next = active.nextSibling;
+
+        if (next) {
+            next.classList.add('active');
+        } 
+
         active.classList.remove('active');
     }else{
-        musicList.firstChild.classList.add('active');
+        musicList.firstElementChild.classList.add('active');
     }
 }
