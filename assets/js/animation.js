@@ -26,6 +26,10 @@ function openPlaylist(event) {
     searchForm.elements.search.value = '';
     
     if(resultList.firstChild){
+        resultList.querySelectorAll('button').forEach(btn=>{
+            btn.removeEventListener('click', player);
+            btn.removeEventListener('click', addMusic);
+        });
         resultList.firstChild.remove();
     }
     resultList.style.display = 'none';
