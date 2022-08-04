@@ -1,5 +1,4 @@
 const searchForm = document.forms[0];
-const musicList = document.querySelector('.music-list>ul');
 const countMusic = document.getElementsByClassName('music-list-count')[0];
 // const resultList = document.getElementsByClassName('search-popup-result')[0];
 
@@ -79,12 +78,12 @@ function musicResult(music){
     icon.alt = 'play icon';
     icon.className = '';
     btn.appendChild(icon);
-    let first = true;
+    let firstClick = true;
     btn.addEventListener('click', (event)=>{
         player(event);
 
-        first && addMusic(event);
-        first = false;
+        firstClick && addMusic(event);
+        firstClick = false;
     });
     li.dataset.musicUrl = music.url; 
     li.appendChild(btn);
