@@ -149,7 +149,7 @@ function addMusic(event) {
     li.appendChild(btn);
 
     musicList.appendChild(li);
-    countMusic.innerText = `Total: ${musicList.children.length}`;
+    countMusic.innerText = `Músicas listadas: ${musicList.children.length}`;
     // <li class="music-item">
     //                         <span>
     //                             <img src="assets\imgs\music-image-default.jpg" class="music-img" alt="icon da música">

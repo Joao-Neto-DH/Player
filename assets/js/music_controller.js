@@ -121,3 +121,15 @@ function keyPressed(event) {
         case 'Space': playMusic({}); break;
     }
 }
+function activeSong() {
+    let active = musicList.querySelector('.active');
+
+    if(!musicList.childElementCount) return;
+
+    if (active) {
+        active.nextSibling() && active.nextSibling().classList().add('active');
+        active.classList.remove('active');
+    }else{
+        musicList.firstChild.classList.add('active');
+    }
+}
