@@ -95,7 +95,7 @@ function control(event) {
             playMusic(btn);
             break;
         case 'next':
-            console.log('seguinte');
+            nextMusic();
             break;
         case 'previous':
             console.log('anterior');
@@ -123,7 +123,7 @@ function playMusic(playButton) {
     }
 
 }
-function nextMusic(event) {
+function nextMusic() {
     activeSong();
 }
 /**
@@ -145,10 +145,11 @@ function activeSong() {
 
         if (next) {
             next.classList.add('active');
+            console.log(next.getElementByTagName('button'));
         } 
 
         active.classList.remove('active');
     }else{
-        // musicList.firstElementChild.classList.add('active');
+        musicList.firstElementChild.classList.add('active');
     }
 }

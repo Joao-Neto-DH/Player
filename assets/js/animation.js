@@ -9,6 +9,12 @@ cover.addEventListener('click', openPlaylist);
 btn_list.addEventListener('click', openPlaylist);
 window.addEventListener('load', () => {
     cover.style.display = playlist.classList.contains('playlist-closed') ? 'none' : '';
+    musicList.parentElement.addEventListener('click', ()=>resultList.style.display = 'none');
+    searchForm.elements.search.addEventListener('focus', (event)=>{
+        // console.log(resultList.firstChild);
+        if(resultList.firstElementChild)
+            resultList.style.display = '';
+    });
 });
 
 window.addEventListener('mousemove', (event) => {
@@ -18,19 +24,19 @@ window.addEventListener('mousemove', (event) => {
     timer = setTimeout(hideController,5*1000);
 });
 /**
- * Gerencia o evento de abertura da playlist
+ * Gerencia o evento de abertura e fechamento da playlist
  */
 function openPlaylist(event) {
     playlist.classList.toggle('playlist-closed');
     cover.style.display = playlist.classList.contains('playlist-closed') ? 'none' : '';
     searchForm.elements.search.value = '';
     
-    if(resultList.firstChild){
+    if(resultList.firstElementChild){
         resultList.querySelectorAll('button').forEach(btn=>{
             btn.removeEventListener('click', player);
             btn.removeEventListener('click', addMusic);
         });
-        resultList.firstChild.remove();
+        resultList.firstElementChild.remove();
     }
     resultList.style.display = 'none';
 }
