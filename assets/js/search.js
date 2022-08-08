@@ -78,13 +78,8 @@ function musicResult(music){
     icon.alt = 'play icon';
     icon.className = '';
     btn.appendChild(icon);
-    let firstClick = true;
-    btn.addEventListener('click', (event)=>{
-        player(event);
-
-        firstClick && addMusic(event);
-        firstClick = false;
-    });
+    // let firstClick = true;
+    btn.addEventListener('click', player);
     li.dataset.musicUrl = music.url; 
     li.appendChild(btn);
 
