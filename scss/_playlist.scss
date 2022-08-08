@@ -171,7 +171,7 @@
                 align-items: center;
                 padding: 18px 16px;
                 border-bottom: 0.5px solid #7B7B7B7a;
-                cursor: pointer;
+                // cursor: pointer;
 
                 &:hover, &.active{
                     background-color: rgba(128, 128, 128, 0.329);
@@ -188,6 +188,29 @@
                     text-overflow: ellipsis;
                     white-space: nowrap;
                     width: 100%;
+                }
+
+                .music-option{
+                    background-color: #ffffff;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row;
+                    column-gap: 6px;
+                    position: absolute;
+                    padding: 8px;
+                    top: 0;
+                    right: 0;
+                    visibility: hidden;
+                    border-radius: 4px;
+                    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);                    
+                }
+
+                & > button{
+                    position: relative;
+
+                    &:focus > .music-option{
+                        visibility: visible;
+                    } 
                 }
 
                 *{
