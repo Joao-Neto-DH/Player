@@ -123,11 +123,14 @@ function playMusic(playButton) {
     }
 
 }
+/**
+ * Função de callback para música seguinte
+ */
 function nextMusic() {
     activeSong();
 }
 /**
- * 
+ * Função de callback para eventos de teclado
  * @param {KeyboardEvent} event 
  */
 function keyPressed(event) {
@@ -135,6 +138,9 @@ function keyPressed(event) {
         case 'Space': playMusic({}); break;
     }
 }
+/**
+ * Seleciona e inicia a reprodução da música activa
+ */
 function activeSong() {
     let active = musicList.querySelector('.active');
 
@@ -143,13 +149,14 @@ function activeSong() {
     if (active) {
         let next = active.nextSibling;
 
-        if (next) {
-            next.classList.add('active');
-            console.log(next.getElementByTagName('button'));
-        } 
-
+        if (next) 
+            next.querySelector('.music-option').childNodes.item(0).click();
+        
         active.classList.remove('active');
     }else{
-        musicList.firstElementChild.classList.add('active');
+        let firstChild = musicList.firstElementChild;
+        // firstChild.classList.add('active');
+        firstChild.querySelector('.music-option').childNodes.item(0).click();
+        // console.log(firstChild.getElementsByClassName('music-option').item(0));
     }
 }

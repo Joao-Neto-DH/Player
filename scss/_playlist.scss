@@ -80,7 +80,7 @@
             }
         }
     }
-
+    
     .search-popup-result{
         background-color: #E6E6E6;
         position: absolute;
@@ -92,7 +92,7 @@
         border: 1px solid #808080;
         padding: 0 16px;
         box-shadow: 0 0 6px rgba(0, 0, 0, 0.35);
-
+        
         &::after{
             content: '';
             border: 10px solid transparent;
@@ -202,13 +202,16 @@
                     right: 0;
                     visibility: hidden;
                     border-radius: 4px;
-                    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);                    
+                    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+                    & > *{
+                        display: flex;
+                    }              
                 }
 
                 & > button{
                     position: relative;
 
-                    &:focus > .music-option{
+                    &:focus-within > .music-option{
                         visibility: visible;
                     } 
                 }

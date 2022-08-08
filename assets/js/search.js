@@ -115,6 +115,7 @@ function addMusic(event) {
     let target = event.target.closest('li');
     let li = document.createElement('li');
     li.classList.add('music-item');
+    li.dataset.musicUrl = target.dataset.musicUrl; 
     
     let span = document.createElement('span');
     
@@ -140,8 +141,14 @@ function addMusic(event) {
 
     let btn = document.createElement('button');
     btn.type = 'button';
-    btn.innerHTML = '<img src="assets/imgs/more-icon.svg" alt="more icon"/><div class="music-option"><button type="button">Play</button><button type="button">Delete</button></div>';
+    btn.innerHTML = '<img src="assets/imgs/more-icon.svg" alt="more icon"/>'+
+                    '<div class="music-option"><button type="button">'+
+                    '<img src="assets/imgs/play-icon.svg" alt="play icon"/></button>'+
+                    '<button type="button">Delete</button></div>';
     li.appendChild(btn);
+
+    let btnsOpt = btn.getElementsByTagName('button');
+    btnsOpt.item(0).addEventListener('click', player);
 
     musicList.appendChild(li);
     countMusic.innerText = `Músicas listadas: ${musicList.children.length}`;
