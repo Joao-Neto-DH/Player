@@ -140,7 +140,7 @@ function addMusic(event) {
 
     let btn = document.createElement('button');
     btn.type = 'button';
-    btn.innerText = 'More';
+    btn.innerHTML = '<img src="assets/imgs/more-icon.svg" alt="more icon"/>';
     li.appendChild(btn);
 
     musicList.appendChild(li);

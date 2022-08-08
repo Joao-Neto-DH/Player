@@ -13,6 +13,7 @@ audio.addEventListener('playing', ()=>{
 audio.addEventListener('pause', ()=>{
     playIconUpdate(false);
 });
+audio.addEventListener('ended', nextMusic);
 
 timerInput.addEventListener('change', change);
 timerInput.addEventListener('mousedown', ()=>{
@@ -41,7 +42,8 @@ function player(event) {
         // console.log(_);
         timerInput.max = audio.duration;
         timerInput.value = 0;
-        playing = true;       
+        playing = true;
+        li.classList.add('active');
     })
     .catch((error)=>alert(`Não foi possível reproduzir o ficheiro 😥${musicPath}\n${error}`));
 }
@@ -54,6 +56,9 @@ function release() {
     timerInput.min = 0;
     timerInput.max = 0;
     timerInput.value = 0;
+    let active = musicList.querySelector('.active');
+    if (active) 
+        active.classList.remove('active');
     // audio.onplaying = null;
     // audio = null;
 }
@@ -118,6 +123,9 @@ function playMusic(playButton) {
     }
 
 }
+function nextMusic(event) {
+    activeSong();
+}
 /**
  * 
  * @param {KeyboardEvent} event 
@@ -130,10 +138,7 @@ function keyPressed(event) {
 function activeSong() {
     let active = musicList.querySelector('.active');
 
-    if(!musicList.childElementCount) {
-        console.log(musicList.childElementCount);
-        return;
-    };
+    if(!musicList.childElementCount) return;
 
     if (active) {
         let next = active.nextSibling;
@@ -144,6 +149,6 @@ function activeSong() {
 
         active.classList.remove('active');
     }else{
-        musicList.firstElementChild.classList.add('active');
+        // musicList.firstElementChild.classList.add('active');
     }
 }
