@@ -102,6 +102,12 @@ function control(event) {
  * @param {HTMLButtonElement} playButton 
  */
 function playMusic(playButton) {
+
+    if (playButton instanceof HTMLButtonElement) {
+        // console.log('é');
+        playButton.blur();
+    }
+
     if (audio.paused) {
         playButton.disabled = true;
         audio.play().finally(()=>{
