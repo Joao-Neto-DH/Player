@@ -11,7 +11,12 @@ button.info{
         background-color: #fff;
         border: 1px solid #fff;
         border-radius: 50%;
-
+    }
+    &:not(:focus) > .btn, &:not(:focus-within) > .btn{
+        animation-name: pulse;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
     }
     
     &:focus > .context-menu, &:focus-within > .context-menu{
@@ -71,5 +76,14 @@ button.info{
                 margin-top: 8px;
             }
         }
+    }
+}
+
+@keyframes pulse {
+    0%, 100%{
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
+    }
+    50%{
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.3);
     }
 }

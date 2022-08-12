@@ -6,7 +6,6 @@
 @import 'scroll';
 @import 'info';
 
-
 *{
     padding: 0;
     margin: 0;
@@ -65,12 +64,11 @@ html, body{
 
 }
 
-
 @media screen and (max-width: variables.$sm) {
     *{
-        font-size: 0.875rem;
+        font-size: 14px;
     }
     .playlist{
-        width: 70%;
+        width: 80%;
     }
 }
