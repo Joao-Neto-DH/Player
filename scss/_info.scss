@@ -1,0 +1,75 @@
+@import 'variables';
+
+button.info{
+    top: 20px;
+    left: 20px;
+    position: relative;
+
+    & > .btn{
+        display: flex;
+        padding: 6px;
+        background-color: #fff;
+        border: 1px solid #fff;
+        border-radius: 50%;
+
+    }
+    
+    &:focus > .context-menu, &:focus-within > .context-menu{
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    & > .context-menu{
+        visibility: hidden;
+        min-width: 87px;
+        margin-top: 14px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        transform: translateY(-30%);
+        transition: .3s;
+        
+        & > ul{
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            border-radius: 4px;
+            text-align: left;
+            position: relative;
+
+            &::before{
+                content: '';
+                position: absolute;
+                border: 8px solid transparent;
+                border-bottom-color: #fff;
+                top: 0;
+                left: 8%;
+                transform: translate(0, -90%);
+            }
+            
+            li{
+                padding: 8px 8px 0;
+                cursor: default;
+                // margin-bottom: 2px;
+                
+                &:last-of-type{
+                    padding-bottom: 8px;
+                }
+                
+                a{
+                    font-size: 14px;
+                    color: variables.$primary-color;
+                    display: block;
+                }
+            }
+
+            hr{
+                margin-top: 8px;
+            }
+        }
+    }
+}
