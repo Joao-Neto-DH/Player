@@ -7,12 +7,13 @@
     // height: 90%;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -15%);
     line-height: 1.5;
     // padding: $pad;
     border-radius: 4px;
     background-color: 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #fff;
+    transition: .5s;
 
     .header{
         display: flex;
@@ -24,12 +25,20 @@
         }
     }
 
+    &[data-modal=""]{
+        display: none;
+    }
+    
+    &.animate{
+        transform: translate(-50%, -50%);
+    }
+
     & > [data-modal-content]{
         display: none;
         padding: $pad;
     }
 
-    &[data-modal=ajuda] > [data-modal-content=ajuda], &[data-modal=ajuda] > [data-modal-content=ajuda]{
+    &[data-modal=ajuda] > [data-modal-content=ajuda], &[data-modal=sobre] > [data-modal-content=sobre]{
         display: block;
     }
 }

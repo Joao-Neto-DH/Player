@@ -19,13 +19,13 @@ button.info{
         animation-play-state: running;
     }
     
-    &:focus > .context-menu, &:focus-within > .context-menu{
+    &:focus > .context-info, &:focus-within > .context-info{
         visibility: visible;
         opacity: 1;
         transform: translateY(0);
     }
 
-    & > .context-menu{
+    & > .context-info{
         visibility: hidden;
         min-width: 87px;
         margin-top: 14px;

@@ -15,12 +15,12 @@
             <span class="btn">
                 <img src="assets/imgs/info-icon.svg" alt="ícone de informação">
             </span>
-            <div class="context-menu">
+            <div class="context-info">
                 <ul>
-                    <li><a href="#" class="btn">Ajuda</a></li>
-                    <li><a href="#" class="btn">Sobre</a></li>
+                    <li><a href="#" class="btn" data-info="ajuda">Ajuda</a></li>
+                    <li><a href="#" class="btn" data-info="sobre">Sobre</a></li>
                     <hr/>
-                    <li><a href="#1" class="btn">Versão: 1.0</a></li>
+                    <li><a href="#" class="btn">Versão: 1.0</a></li>
                 </ul>
             </div>
         </button>
@@ -115,8 +115,9 @@
             </div>
         </div>
     </div>
-    <section class="modal" data-modal="ajuda">
+    <section class="modal" data-modal>
         <div class="header">
+            <h1 class="title"></h1>
             <button type="button" data-modal-close>CLOSE</button>
         </div>
         <article data-modal-content="ajuda">
