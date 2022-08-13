@@ -25,6 +25,9 @@ html, body{
     background: radial-gradient(#202B27,#3C5E2B);
 }
 
+.closed{
+    display: none;
+}
 .controller{
     $horizontal-space: 19px;
     background: linear-gradient(transparent, variables.$primary-color);
