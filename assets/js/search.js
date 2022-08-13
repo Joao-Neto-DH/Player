@@ -73,21 +73,29 @@ function musicResult(music){
     
     let btn = document.createElement('button');
     btn.type = 'button';
-    let icon = img.cloneNode();
-    icon.src = 'assets/imgs/play-icon.svg';
-    icon.alt = 'play icon';
-    icon.className = '';
-    btn.appendChild(icon);
+    // let icon = img.cloneNode();
+    // icon.src = 'assets/imgs/play-icon.svg';
+    // icon.alt = 'play icon';
+    // icon.className = '';
+    // btn.appendChild(icon);
     // let firstClick = true;
+    btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="11.599" height="15.187" viewBox="0 0 11.599 15.187">
+                        <path fill="rgb(0,0,0)" fill-rule="evenodd" d="M11.376 8.00951912l-10.599 7.066c-.15341272.10208886-.35054332.11151911-.51300056.02454072C.10154219 15.01308144.00009519 14.84379497 0 14.65951912v-14.132C.0000952.34324326.10154219.1739568.26399944.0869784.42645668 0 .62358728.00943026.777.11151912l10.599 7.066c.13907756.09273659.22261218.24883946.22261218.416 0 .16716053-.08353462.3232634-.22261218.416z"/>
+                    </svg>
+                    `;
     btn.addEventListener('click', player);
     li.dataset.musicUrl = music.url; 
     li.appendChild(btn);
 
     btn = btn.cloneNode();
-    icon = icon.cloneNode();
-    icon.src = 'assets/imgs/plus-icon.svg';
-    icon.alt = 'plus icon';
-    btn.appendChild(icon);
+    // icon = icon.cloneNode();
+    // icon.src = 'assets/imgs/plus-icon.svg';
+    // icon.alt = 'plus icon';
+    // btn.appendChild(icon);
+    btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                        <path fill="rgb(0,0,0)" fill-rule="evenodd" d="M6 6V0h2v6h6v2H8v6H6V8H0V6h6z"/>
+                    </svg>
+                    `;
 
     btn.addEventListener('click', addMusic);
 
@@ -143,7 +151,9 @@ function addMusic(event) {
     btn.type = 'button';
     btn.innerHTML = '<img src="assets/imgs/more-icon.svg" alt="more icon"/>'+
                     '<div class="music-option"><button type="button">'+
-                    '<img src="assets/imgs/play-icon.svg" alt="play icon"/></button>'+
+                    `<svg xmlns="http://www.w3.org/2000/svg" width="11.599" height="15.187" viewBox="0 0 11.599 15.187">
+                    <path fill="rgb(0,0,0)" fill-rule="evenodd" d="M11.376 8.00951912l-10.599 7.066c-.15341272.10208886-.35054332.11151911-.51300056.02454072C.10154219 15.01308144.00009519 14.84379497 0 14.65951912v-14.132C.0000952.34324326.10154219.1739568.26399944.0869784.42645668 0 .62358728.00943026.777.11151912l10.599 7.066c.13907756.09273659.22261218.24883946.22261218.416 0 .16716053-.08353462.3232634-.22261218.416z"/>
+                    </svg></button>`+
                     '<button type="button">Delete</button></div>';
     li.appendChild(btn);
 
