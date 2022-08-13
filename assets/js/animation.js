@@ -3,10 +3,13 @@ const playlist = document.getElementsByClassName('playlist')[0];
 const btn_list = document.querySelector('[data-list]');
 const controllerHideClassName = 'controller-closed';
 const [,btnPlay,] = controllers;
+const modal = document.querySelector('.modal[data-modal]');
+
 let timer = setTimeout(hideController,5*1000);
 
 cover.addEventListener('click', openPlaylist);
 btn_list.addEventListener('click', openPlaylist);
+
 window.addEventListener('load', () => {
     cover.style.display = playlist.classList.contains('playlist-closed') ? 'none' : '';
     musicList.parentElement.addEventListener('click', ()=>resultList.style.display = 'none');
@@ -19,7 +22,7 @@ window.addEventListener('load', () => {
 let delayer = delayTimer(300);
 window.addEventListener('mousemove', () => {
     // console.log(timer);
-    let tim = delayer(
+    delayer(
         ()=>{
             controller.classList.remove(controllerHideClassName);
             clearTimeout(timer);
@@ -27,7 +30,13 @@ window.addEventListener('mousemove', () => {
             // console.log('moveu');
         }
     );
-    console.log(tim)
+});
+
+modal.querySelector('[data-modal-close]').addEventListener('click', (ev)=>{
+    // if (!modal.dataset.modal) {
+        modal.dataset.modal = '';
+        modal.style.display = 'none';
+    // }
 });
 /**
  * Gerencia o evento de abertura e fechamento da playlist

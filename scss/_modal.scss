@@ -1,0 +1,41 @@
+@import 'variables';
+
+.modal{
+    $pad: 16px;
+    position: absolute;
+    width: 50%;
+    // height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.5;
+    // padding: $pad;
+    border-radius: 4px;
+    background-color: 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+
+    .header{
+        display: flex;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
+        padding: $pad;
+        
+        & > button{
+            margin-left: auto;
+        }
+    }
+
+    & > [data-modal-content]{
+        display: none;
+        padding: $pad;
+    }
+
+    &[data-modal=ajuda] > [data-modal-content=ajuda], &[data-modal=ajuda] > [data-modal-content=ajuda]{
+        display: block;
+    }
+}
+
+@media screen and (max-width: variables.$md) {
+    .modal{
+        width: 80%;
+    }
+}

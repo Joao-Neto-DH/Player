@@ -277,8 +277,8 @@
 }
 
 .music-icon{
-    --size: 90%;
-    width: var(--size);
+    $size: 90%;
+    width: --size;
     // height: var(--size);
 
     top: 50%;
@@ -296,8 +296,8 @@
 }
 @media screen and (min-width: variables.$md) {
     .music-icon{
-        --size: 319px;
-        width: var(--size);
-        height: var(--size);
+        $size: 319px;
+        width: $size;
+        height: $size;
     }
 }
