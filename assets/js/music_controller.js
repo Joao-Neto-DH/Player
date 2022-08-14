@@ -98,7 +98,7 @@ function control(event) {
             nextMusic();
             break;
         case 'previous':
-            console.log('anterior');
+            previousMusic();
             break;
     }
 }
@@ -128,6 +128,25 @@ function playMusic(playButton) {
  */
 function nextMusic() {
     activeSong();
+}
+/**
+ * Função de callback para voltar a música anterior
+ */
+function previousMusic(){
+    let active = musicList.querySelector('.active');
+
+    if(!musicList.childElementCount) return;
+
+    if(active){
+        let previous = active.previousElementSibling;
+        
+        if(previous)
+            previous.querySelector('.music-option').childNodes.item(0).click();
+        active.classList.remove('active');
+        return;
+    }
+    
+    musicList.firstElementChild.querySelector('.music-option').childNodes.item(0).click();
 }
 /**
  * Função de callback para eventos de teclado
